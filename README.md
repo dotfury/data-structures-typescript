@@ -1,5 +1,6 @@
 # Data Structures in TypeScript
 **Why?**
+
 Learn fundamental Data Structures
 
 Learn TypeScript

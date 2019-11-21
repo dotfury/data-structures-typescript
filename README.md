@@ -1,13 +1,15 @@
 # Data Structures in TypeScript
 **Why?**
-- Learn fundamental Data Structures
-- Learn TypeScript
-- Write tests for Data Structures (Jest)
+Learn fundamental Data Structures
 
-# Structures implemented
+Learn TypeScript
 
-## Singly Linked List
-### Methods
+Write tests for Data Structures (Jest)
+
+## Structures implemented
+
+### Singly Linked List
+#### Methods
 **push:** Add a *Node* to the end of the list
 
 **pop:** Remove *Node* from the end of the list

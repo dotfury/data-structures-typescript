@@ -184,3 +184,188 @@ describe('Can change values of nodes', () => {
     expect(list.length).toBe(3);
   });
 });
+
+describe('Can insert nodes', () => {
+  test('Can insert', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(4);
+
+    list.insert(2, 3);
+
+    const node = list.get(2);
+
+    expect(list.length).toBe(4);
+    expect(node!.value).toBe(3);
+  });
+
+  test('Can insert to empty list', () => {
+    const list = new SinglyLinkedList();
+
+    list.insert(0, 'hi');
+
+    expect(list.length).toBe(1);
+    expect(list.head!.value).toBe('hi');
+    expect(list.tail!.value).toBe('hi');
+  });
+
+  test('Can insert to end of list', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.insert(3, 4);
+
+    expect(list.length).toBe(4);
+    expect(list.tail!.value).toBe(4);
+  });
+
+  test('Return false if out of bounds', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+
+    const inserted = list.insert(8, 4);
+
+    expect(inserted).toBe(false);
+  });
+
+  test('Return false if less than 0', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+
+    const inserted = list.insert(-1, 4);
+
+    expect(inserted).toBe(false);
+  });
+});
+
+describe('Can remove nodes', () => {
+  test('Can remove', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    const removed = list.remove(2);
+
+    expect(removed).toBe(3);
+    expect(list.length).toBe(3);
+    expect(list.get(2)!.value).toBe(4);
+  });
+
+  test('Can remove first node', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    const removed = list.remove(0);
+
+    expect(removed).toBe(1);
+    expect(list.length).toBe(3);
+    expect(list.head!.value).toBe(2);
+  });
+
+  test('Can remove last node', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    const removed = list.remove(3);
+
+    expect(removed).toBe(4);
+    expect(list.length).toBe(3);
+    expect(list.tail!.value).toBe(3);
+  });
+
+  test('Can remove only node', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+
+    const removed = list.remove(0);
+
+    expect(removed).toBe(1);
+    expect(list.length).toBe(0);
+  });
+
+  test('Returns undefined if out of bounds: index = length', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    const removed = list.remove(4);
+
+    expect(removed).toBe(undefined);
+    expect(list.length).toBe(4);
+  });
+
+  test('Returns undefined if out of bounds: index > length', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    const removed = list.remove(7);
+
+    expect(removed).toBe(undefined);
+    expect(list.length).toBe(4);
+  });
+
+  test('Returns undefined if empty list', () => {
+    const list = new SinglyLinkedList();
+
+    const removed = list.remove(7);
+
+    expect(removed).toBe(undefined);
+  });
+
+  test('Returns undefined if index < 0', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+
+    const removed = list.remove(-1);
+
+    expect(removed).toBe(undefined);
+  });
+});
+
+describe('Can reverse list in place', () => {
+  test('Can reverse', () => {
+    const list = new SinglyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    list.reverse();
+
+    expect(list.head!.value).toBe(4);
+    expect(list.head!.next!.value).toBe(3);
+    expect(list.head!.next!.next!.value).toBe(2);
+    expect(list.tail!.value).toBe(1);
+  });
+});

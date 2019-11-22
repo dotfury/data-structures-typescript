@@ -126,4 +126,60 @@ export default class SinglyLinkedList {
     return true;
   }
 
+  insert(index: number, value: string | number): boolean {
+    if (index < 0 || index > this.length) {
+      return false;
+    } else if (index === this.length) {
+      this.push(value);
+    } else if (index === 0) {
+      this.unshift(value);
+    } else {
+      const prevNode = this.get(index -1);
+      const insertNode = new Node(value);
+
+      insertNode.next = prevNode!.next;
+      prevNode!.next = insertNode;
+      this.length++;
+    }
+
+    return true;
+  }
+
+  remove(index: number): string | number | undefined {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    } else if (index === this.length - 1) {
+      return this.pop();
+    } else if (index === 0) {
+      return this.shift();
+    } else {
+      const prevNode = this.get(index - 1);
+      const removedNode = prevNode!.next;
+
+      prevNode!.next = removedNode!.next;
+      this.length--;
+
+      return removedNode!.value;
+    }
+  }
+
+  reverse(): SinglyLinkedList {
+    let node = this.head;
+
+    this.head = this.tail;
+    this.tail = node;
+
+    let prev = null;
+    let next = null;
+
+    for (let i = 0; i < this.length; i++) {
+      next = node!.next;
+      node!.next = prev;
+      prev = node;
+      node = next;
+    }
+
+    return this;
+  }
+
 }

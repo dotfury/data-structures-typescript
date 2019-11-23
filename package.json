@@ -2,7 +2,7 @@
   "name": "Data-Structures",
   "version": "0.0.1",
   "description": "Data structures implemented in TypeScript",
-  "private": true,
+  "private": false,
   "scripts": {
     "test": "yarn jest"
   },

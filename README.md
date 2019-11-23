@@ -22,3 +22,9 @@ Write tests for Data Structures (Jest)
 **get:** Retrieve a *Node* by its position in a list
 
 **set:** Change the value of a *Node* based on its position in a list
+
+**insert:** Add a *Node* to the list at a specific position
+
+**remove:** Remove a *Node* from the list at a specific position
+
+**reverse:** Reverse the list in place

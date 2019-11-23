@@ -1,9 +1,12 @@
 import Node from '../Node';
 
+type NodeType = Node | null;
+type ValueType = string | number;
+
 export default class SinglyLinkedList {
   length: number;
-  head: Node | null;
-  tail: Node | null;
+  head: NodeType;
+  tail: NodeType;
 
   constructor() {
     this.head = null;
@@ -11,7 +14,7 @@ export default class SinglyLinkedList {
     this.length = 0;
   }
 
-  push(value: string | number): SinglyLinkedList {
+  push(value: ValueType): SinglyLinkedList {
     const node = new Node(value);
 
     if (this.tail !== null) {
@@ -82,7 +85,7 @@ export default class SinglyLinkedList {
     return value;
   }
 
-  unshift(value: string | number): SinglyLinkedList {
+  unshift(value: ValueType): SinglyLinkedList {
     const node = new Node(value);
 
     if (this.length === 0) {
@@ -98,7 +101,7 @@ export default class SinglyLinkedList {
     return this;
   }
 
-  get(index: number): Node | null {
+  get(index: number): NodeType {
     if (index < 0 || index >= this.length) {
       return null;
     }
@@ -114,7 +117,7 @@ export default class SinglyLinkedList {
     return currentNode;
   }
 
-  set(index: number, value: string | number): boolean {
+  set(index: number, value: ValueType): boolean {
     const node = this.get(index);
 
     if (!node) {
@@ -126,7 +129,7 @@ export default class SinglyLinkedList {
     return true;
   }
 
-  insert(index: number, value: string | number): boolean {
+  insert(index: number, value: ValueType): boolean {
     if (index < 0 || index > this.length) {
       return false;
     } else if (index === this.length) {
@@ -145,7 +148,7 @@ export default class SinglyLinkedList {
     return true;
   }
 
-  remove(index: number): string | number | undefined {
+  remove(index: number): ValueType | undefined {
     if (index < 0 || index >= this.length) {
       return undefined;
     } else if (index === this.length - 1) {

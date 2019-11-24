@@ -32,7 +32,7 @@ export default class SinglyLinkedList {
     return this;
   }
 
-  pop(): any {
+  pop(): ValueType | undefined {
     if (this.length === 0) {
       return undefined;
     }
@@ -41,7 +41,7 @@ export default class SinglyLinkedList {
       const { value } = this.head!;
 
       this.head = null;
-      this.tail = this.head;
+      this.tail = null;
       this.length--;
 
       return value;
@@ -64,9 +64,11 @@ export default class SinglyLinkedList {
 
       currentNode = currentNode.next;
     }
+
+    return undefined;
   }
 
-  shift(): any {
+  shift(): ValueType | undefined {
     if (this.length === 0) {
       return undefined;
     }

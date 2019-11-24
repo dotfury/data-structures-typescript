@@ -159,12 +159,15 @@ export default class SinglyLinkedList {
       return this.shift();
     } else {
       const prevNode = this.get(index - 1);
-      const removedNode = prevNode!.next;
+      let removedNode = prevNode!.next;
 
       prevNode!.next = removedNode!.next;
       this.length--;
 
-      return removedNode!.value;
+      const { value } = removedNode!;
+      removedNode = null;
+
+      return value;
     }
   }
 

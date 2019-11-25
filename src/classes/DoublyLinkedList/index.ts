@@ -27,4 +27,25 @@ export default class DoublyLinkedList {
 
     return this;
   }
+
+  pop(): ValueType | undefined {
+    if (this.length === 0) {
+      return undefined;
+    }
+
+    const removedTail = this.tail;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail = removedTail!.previous;
+      this.tail!.next = null;
+      removedTail!.previous = null;
+    }
+
+    this.length--;
+
+    return removedTail!.value;
+  }
  }

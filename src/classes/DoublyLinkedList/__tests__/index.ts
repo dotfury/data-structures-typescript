@@ -22,4 +22,44 @@ describe('====DOUBLY LINKED LIST====', () => {
     expect(list.tail!.previous!.value).toBe(1);
     expect(list.tail!.next).toBe(null);
   });
+
+  test('Can pop node off the end of list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+
+    expect(list.length).toBe(2);
+
+    const popped = list.pop();
+
+    expect(list.length).toBe(1);
+    expect(popped).toBe(2);
+    expect(list.head!.value).toBe(1);
+    expect(list.tail!.value).toBe(1);
+    expect(list.tail!.next).toBe(null);
+  });
+
+  test('Can pop only node out of list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+
+    expect(list.length).toBe(1);
+
+    const popped = list.pop();
+
+    expect(list.length).toBe(0);
+    expect(popped).toBe(1);
+    expect(list.head).toBe(null);
+    expect(list.tail).toBe(null);
+  });
+
+  test('Return undefined if empty list: pop', () => {
+    const list = new DoublyLinkedList();
+    const popped = list.pop();
+
+    expect(list.length).toBe(0);
+    expect(popped).toBe(undefined);
+  });
 });

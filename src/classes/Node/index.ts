@@ -1,9 +1,14 @@
-export default class Node {
-  value: string | number;
-  next: Node | null;
+type ValueType = string | number;
+type NodeType = Node | null;
 
-  constructor(value: string | number) {
+export default class Node {
+  value: ValueType;
+  next: NodeType;
+  previous: NodeType;
+
+  constructor(value: ValueType) {
     this.value = value;
     this.next = null;
+    this.previous = null;
   }
 }

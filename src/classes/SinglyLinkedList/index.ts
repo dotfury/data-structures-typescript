@@ -1,7 +1,5 @@
 import Node from '../Node';
-
-type NodeType = Node | null;
-type ValueType = string | number;
+import  { NodeType, ValueType } from '../../types';
 
 export default class SinglyLinkedList {
   length: number;

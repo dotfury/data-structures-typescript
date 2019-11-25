@@ -1,6 +1,6 @@
 import Node from '../';
 
-describe('Can create a node', () => {
+describe('====NODE====', () => {
   test('Can set value', () => {
     const node = new Node(10);
 

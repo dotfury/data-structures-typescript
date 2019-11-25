@@ -1,6 +1,6 @@
 import SinglyLinkedList from '../';
 
-describe('Can create list', () => {
+describe('====SINGLY LINKED LIST====', () => {
   test('Create an empty list', () => {
     const list = new SinglyLinkedList();
 
@@ -8,9 +8,7 @@ describe('Can create list', () => {
     expect(list.tail).toEqual(null);
     expect(list.length).toEqual(0);
   });
-});
 
-describe('Can add nodes', () => {
   test('First node added is head and tail', () => {
     const list = new SinglyLinkedList();
 
@@ -41,9 +39,7 @@ describe('Can add nodes', () => {
     expect(list.head!.value).toEqual(43);
     expect(list.head!.next!.value).toEqual('hello');
   });
-});
 
-describe('Can alter the list', () => {
   test('Can remove last node', () => {
     const list = new SinglyLinkedList();
 
@@ -123,9 +119,7 @@ describe('Can alter the list', () => {
     expect(list.head!.value).toEqual(42);
     expect(list.tail!.value).toEqual(42);
   });
-});
 
-describe('Can search the list', () => {
   test('Can get node by index', () => {
     const list = new SinglyLinkedList();
 
@@ -155,9 +149,7 @@ describe('Can search the list', () => {
 
     expect(node).toEqual(null);
   });
-});
 
-describe('Can change values of nodes', () => {
   test('Can set', () => {
     const list = new SinglyLinkedList();
 
@@ -183,9 +175,7 @@ describe('Can change values of nodes', () => {
     expect(isSet).toBe(false);
     expect(list.length).toBe(3);
   });
-});
 
-describe('Can insert nodes', () => {
   test('Can insert', () => {
     const list = new SinglyLinkedList();
 
@@ -246,9 +236,7 @@ describe('Can insert nodes', () => {
 
     expect(inserted).toBe(false);
   });
-});
 
-describe('Can remove nodes', () => {
   test('Can remove', () => {
     const list = new SinglyLinkedList();
 
@@ -350,9 +338,7 @@ describe('Can remove nodes', () => {
 
     expect(removed).toBe(undefined);
   });
-});
 
-describe('Can reverse list in place', () => {
   test('Can reverse', () => {
     const list = new SinglyLinkedList();
 

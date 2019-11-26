@@ -97,4 +97,31 @@ describe('====DOUBLY LINKED LIST====', () => {
     expect(list.head).toBe(null);
     expect(list.tail).toBe(null);
   });
+
+  test('Can add node to the beginning of the list: unshift', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(2);
+
+    expect(list.length).toBe(1);
+
+    list.unshift(1);
+
+    expect(list.length).toBe(2);
+    expect(list.head!.value).toBe(1);
+    expect(list.head!.previous).toBe(null);
+    expect(list.tail!.value).toBe(2);
+    expect(list.tail!.previous).not.toBe(null);
+  });
+
+  test('Can add node to empty list: unshift', () => {
+    const list = new DoublyLinkedList();
+
+    list.unshift(1);
+
+    expect(list.length).toBe(1);
+    expect(list.head!.value).toBe(1);
+    expect(list.tail!.value).toBe(1);
+    expect(list.head!.previous).toBe(null);
+  });
 });

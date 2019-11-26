@@ -28,3 +28,21 @@ Write tests for Data Structures (Jest)
 **remove:** Remove a *Node* from the list at a specific position
 
 **reverse:** Reverse the list in place
+
+### Doubly Linked List
+#### Methods
+**push**
+
+**pop**
+
+**shift**
+
+**unshift**
+
+**get**
+
+**set**
+
+**insert**
+
+**remove**

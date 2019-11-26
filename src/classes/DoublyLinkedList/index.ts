@@ -69,4 +69,21 @@ export default class DoublyLinkedList {
 
     return removedHead!.value;
   }
+
+  unshift(value: ValueType): DoublyLinkedList {
+    const node = new Node(value);
+
+    if (this.length === 0) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.head!.previous = node;
+      node.next = this.head;
+      this.head = node;
+    }
+
+    this.length++;
+
+    return this;
+  }
  }

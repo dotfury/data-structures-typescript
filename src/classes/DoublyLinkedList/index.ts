@@ -99,7 +99,7 @@ export default class DoublyLinkedList {
       currentNode = this.head;
       let i = 0;
 
-      while(i < index) {
+      while(i !== index) {
         currentNode = currentNode!.next;
         i++;
       }
@@ -107,7 +107,7 @@ export default class DoublyLinkedList {
       currentNode = this.tail;
       let i = this.length - 1;
 
-      while(i > index) {
+      while(i !== index) {
         currentNode = currentNode!.previous;
         i--;
       }

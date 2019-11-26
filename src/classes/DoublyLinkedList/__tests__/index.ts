@@ -124,4 +124,100 @@ describe('====DOUBLY LINKED LIST====', () => {
     expect(list.tail!.value).toBe(1);
     expect(list.head!.previous).toBe(null);
   });
+
+  test('Can get node from first half of list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+    list.push(5);
+    list.push(6);
+    list.push(7);
+
+    const value = list.get(2);
+
+    expect(value).toBe(3);
+  });
+
+  test('Can get node from second half of list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+    list.push(5);
+    list.push(6);
+    list.push(7);
+
+    const value = list.get(4);
+
+    expect(value).toBe(5);
+  });
+
+  test('Can get first node from list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+    list.push(5);
+    list.push(6);
+    list.push(7);
+
+    const value = list.get(0);
+
+    expect(value).toBe(1);
+  });
+
+  test('Can get last node from list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+    list.push(5);
+    list.push(6);
+    list.push(7);
+
+    const value = list.get(6);
+
+    expect(value).toBe(7);
+  });
+
+  test('Return null if out of list bounds: index < 0', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+    list.push(5);
+    list.push(6);
+    list.push(7);
+
+    const value = list.get(-1);
+
+    expect(value).toBe(null);
+  });
+
+  test('Return null if out of list bounds: index > length', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+    list.push(5);
+    list.push(6);
+    list.push(7);
+
+    const value = list.get(8);
+
+    expect(value).toBe(null);
+  });
 });

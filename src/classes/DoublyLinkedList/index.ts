@@ -86,4 +86,33 @@ export default class DoublyLinkedList {
 
     return this;
   }
+
+  get(index: number): ValueType | null {
+    if ( index < 0 || index >= this.length) {
+      return null;
+    }
+
+    const middle = Math.floor(this.length / 2);
+    let currentNode = null;
+
+    if (index <= middle) {
+      currentNode = this.head;
+      let i = 0;
+
+      while(i < index) {
+        currentNode = currentNode!.next;
+        i++;
+      }
+    } else {
+      currentNode = this.tail;
+      let i = this.length - 1;
+
+      while(i > index) {
+        currentNode = currentNode!.previous;
+        i--;
+      }
+    }
+
+    return currentNode!.value;
+  }
  }

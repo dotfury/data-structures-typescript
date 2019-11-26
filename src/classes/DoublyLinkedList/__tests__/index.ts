@@ -62,4 +62,39 @@ describe('====DOUBLY LINKED LIST====', () => {
     expect(list.length).toBe(0);
     expect(popped).toBe(undefined);
   });
+
+  test('Return undefined if empty list: shift', () => {
+    const list = new DoublyLinkedList();
+    const shifted = list.shift();
+
+    expect(list.length).toBe(0);
+    expect(shifted).toBe(undefined);
+  });
+
+  test('Can shift list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+
+    const shifted = list.shift();
+
+    expect(list.length).toBe(1);
+    expect(shifted).toBe(1);
+    expect(list.head!.value).toBe(2);
+    expect(list.tail!.value).toBe(2);
+  });
+
+  test('Can shift only node in list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+
+    const shifted = list.shift();
+
+    expect(list.length).toBe(0);
+    expect(shifted).toBe(1);
+    expect(list.head).toBe(null);
+    expect(list.tail).toBe(null);
+  });
 });

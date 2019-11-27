@@ -245,4 +245,78 @@ describe('====DOUBLY LINKED LIST====', () => {
     expect(changed).toBe(false);
     expect(list.length).toBe(1);
   });
+
+  test('Can insert node at begging of list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(2);
+    list.push(3);
+    list.push(4);
+    list.push(5);
+
+    const inserted = list.insert(0, 1);
+
+    expect(inserted).toBe(true);
+    expect(list.head!.value).toBe(1);
+    expect(list.length).toBe(5);
+  });
+
+  test('Can insert node at end of list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(4);
+
+    const inserted = list.insert(4, 5);
+
+    expect(inserted).toBe(true);
+    expect(list.tail!.value).toBe(5);
+    expect(list.length).toBe(5);
+  });
+
+  test('Can insert node in list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const inserted = list.insert(3, 4);
+    const node = list.get(3);
+
+    expect(inserted).toBe(true);
+    expect(node!.value).toBe(4);
+    expect(list.length).toBe(5);
+  });
+
+  test('Return false on insert: index < 0', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const inserted = list.insert(-3, 4);
+    
+    expect(inserted).toBe(false);
+    expect(list.length).toBe(4);
+  });
+
+  test('Return false on insert: index > length', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const inserted = list.insert(5, 6);
+    
+    expect(inserted).toBe(false);
+    expect(list.length).toBe(4);
+  });
 });

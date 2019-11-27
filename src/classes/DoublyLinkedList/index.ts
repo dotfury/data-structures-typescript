@@ -164,4 +164,22 @@ export default class DoublyLinkedList {
       return node!.value;
     }
   }
+
+  reverse(): DoublyLinkedList {
+    let currentNode = this.head;
+    let tail = this.tail;
+
+    while (currentNode !== null) {
+      const next = currentNode!.next;
+
+      currentNode!.next = currentNode!.previous;
+      currentNode!.previous = next;
+      currentNode = next;
+    }
+
+    this.tail = this.head;
+    this.head = tail;
+
+    return this;
+  }
  }

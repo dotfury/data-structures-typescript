@@ -408,4 +408,26 @@ describe('====DOUBLY LINKED LIST====', () => {
     expect(removedValue).toBe(undefined);
     expect(list.length).toBe(4);
   });
+
+  test('Can reverse list in place', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(5);
+    list.push(10);
+    list.push(15);
+    list.push(20);
+    list.reverse();
+
+    expect(list.head!.previous).toBe(null);
+    expect(list.head!.value).toBe(20);
+    expect(list.head!.next!.value).toBe(15);
+    expect(list.head!.next!.next!.value).toBe(10);
+    expect(list.head!.next!.next!.next!.value).toBe(5);
+
+    expect(list.tail!.next).toBe(null);
+    expect(list.tail!.value).toBe(5);
+    expect(list.tail!.previous!.value).toBe(10);
+    expect(list.tail!.previous!.previous!.value).toBe(15);
+    expect(list.tail!.previous!.previous!.previous!.value).toBe(20);
+  });
 });

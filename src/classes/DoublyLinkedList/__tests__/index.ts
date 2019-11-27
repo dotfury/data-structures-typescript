@@ -220,4 +220,29 @@ describe('====DOUBLY LINKED LIST====', () => {
 
     expect(node).toBe(null);
   });
+
+  test('Can set value of a node in the list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push('hello');
+    list.push('where');
+    list.push('Tom');
+
+    const changed = list.set(1, 'there');
+    const node = list.get(1);
+
+    expect(changed).toBe(true);
+    expect(node!.value).toBe('there');
+  });
+
+  test('Return false if node not found: set', () => {
+    const list = new DoublyLinkedList();
+
+    list.push('hello');
+
+    const changed = list.set(1, 'there');
+
+    expect(changed).toBe(false);
+    expect(list.length).toBe(1);
+  });
 });

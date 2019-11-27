@@ -115,4 +115,15 @@ export default class DoublyLinkedList {
 
     return currentNode;
   }
+
+  set(index: number, value: ValueType): boolean {
+    const node = this.get(index);
+
+    if (node !== null) {
+      node!.value = value;
+      return true;
+    }
+
+    return false;
+  }
  }

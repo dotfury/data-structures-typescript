@@ -87,7 +87,7 @@ export default class DoublyLinkedList {
     return this;
   }
 
-  get(index: number): ValueType | null {
+  get(index: number): NodeType | null {
     if ( index < 0 || index >= this.length) {
       return null;
     }
@@ -113,6 +113,6 @@ export default class DoublyLinkedList {
       }
     }
 
-    return currentNode!.value;
+    return currentNode;
   }
  }

@@ -136,9 +136,9 @@ describe('====DOUBLY LINKED LIST====', () => {
     list.push(6);
     list.push(7);
 
-    const value = list.get(2);
+    const node = list.get(2);
 
-    expect(value).toBe(3);
+    expect(node!.value).toBe(3);
   });
 
   test('Can get node from second half of list', () => {
@@ -152,9 +152,9 @@ describe('====DOUBLY LINKED LIST====', () => {
     list.push(6);
     list.push(7);
 
-    const value = list.get(4);
+    const node = list.get(4);
 
-    expect(value).toBe(5);
+    expect(node!.value).toBe(5);
   });
 
   test('Can get first node from list', () => {
@@ -168,9 +168,9 @@ describe('====DOUBLY LINKED LIST====', () => {
     list.push(6);
     list.push(7);
 
-    const value = list.get(0);
+    const node = list.get(0);
 
-    expect(value).toBe(1);
+    expect(node!.value).toBe(1);
   });
 
   test('Can get last node from list', () => {
@@ -184,9 +184,9 @@ describe('====DOUBLY LINKED LIST====', () => {
     list.push(6);
     list.push(7);
 
-    const value = list.get(6);
+    const node = list.get(6);
 
-    expect(value).toBe(7);
+    expect(node!.value).toBe(7);
   });
 
   test('Return null if out of list bounds: index < 0', () => {
@@ -200,9 +200,9 @@ describe('====DOUBLY LINKED LIST====', () => {
     list.push(6);
     list.push(7);
 
-    const value = list.get(-1);
+    const node = list.get(-1);
 
-    expect(value).toBe(null);
+    expect(node).toBe(null);
   });
 
   test('Return null if out of list bounds: index > length', () => {
@@ -216,8 +216,8 @@ describe('====DOUBLY LINKED LIST====', () => {
     list.push(6);
     list.push(7);
 
-    const value = list.get(8);
+    const node = list.get(8);
 
-    expect(value).toBe(null);
+    expect(node).toBe(null);
   });
 });

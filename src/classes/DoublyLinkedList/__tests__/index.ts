@@ -289,6 +289,8 @@ describe('====DOUBLY LINKED LIST====', () => {
 
     expect(inserted).toBe(true);
     expect(node!.value).toBe(4);
+    expect(node!.previous!.value).toBe(3);
+    expect(node!.next!.value).toBe(5);
     expect(list.length).toBe(5);
   });
 
@@ -317,6 +319,93 @@ describe('====DOUBLY LINKED LIST====', () => {
     const inserted = list.insert(5, 6);
     
     expect(inserted).toBe(false);
+    expect(list.length).toBe(4);
+  });
+
+  test('Can remove node from list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const removedValue = list.remove(2);
+    const node = list.get(2);
+
+    expect(node!.value).toBe(5);
+    expect(node!.previous!.value).toBe(2);
+    expect(removedValue).toBe(3);
+    expect(list.length).toBe(3);
+  });
+
+  test('Can remove first node from list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const removedValue = list.remove(0);
+
+    expect(removedValue).toBe(1);
+    expect(list.length).toBe(3);
+  });
+
+  test('Can remove last node from list', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const removedValue = list.remove(3);
+
+    expect(removedValue).toBe(5);
+    expect(list.length).toBe(3);
+  });
+
+  test('Return undefined on remove: index < 0', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const removedValue = list.remove(-3);
+
+    expect(removedValue).toBe(undefined);
+    expect(list.length).toBe(4);
+  });
+
+  test('Return undefined on remove: index = length', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const removedValue = list.remove(4);
+
+    expect(removedValue).toBe(undefined);
+    expect(list.length).toBe(4);
+  });
+
+  test('Return undefined on remove: index > length', () => {
+    const list = new DoublyLinkedList();
+
+    list.push(1);
+    list.push(2);
+    list.push(3);
+    list.push(5);
+
+    const removedValue = list.remove(5);
+
+    expect(removedValue).toBe(undefined);
     expect(list.length).toBe(4);
   });
 });

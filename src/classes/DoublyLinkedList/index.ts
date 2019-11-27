@@ -147,4 +147,21 @@ export default class DoublyLinkedList {
 
     return true;
   }
+
+  remove(index: number): ValueType | undefined {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    } else if (index === 0) {
+      return this.shift();
+    } else if (index === this.length - 1) {
+      return this.pop();
+    } else {
+      const node = this.get(index);
+      node!.previous!.next = node!.next;
+      node!.next!.previous = node!.previous;
+      this.length--;
+
+      return node!.value;
+    }
+  }
  }

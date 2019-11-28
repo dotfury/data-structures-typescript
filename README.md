@@ -46,3 +46,5 @@ Write tests for Data Structures (Jest)
 **insert**
 
 **remove**
+
+**reverse**

@@ -48,3 +48,7 @@ Write tests for Data Structures (Jest)
 **remove**
 
 **reverse**
+
+### Stack
+#### Methods
+**push** Add a *Node* to the top of the stack

@@ -27,4 +27,22 @@ export default class Stack {
 
     this.size++;
   }
+
+  pop(): ValueType | null {
+    if (this.size === 0) {
+      return null;
+    } else {
+      const { value } = this.first!;
+
+      if (this.size === 1) {
+        this.first = null;
+        this.last = null;
+      } else {
+        this.first = this.first!.next;
+      }
+
+      this.size--;
+      return value;
+    }
+  }
 }

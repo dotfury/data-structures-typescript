@@ -53,4 +53,4 @@ Write tests for Data Structures (Jest)
 #### Methods
 **push** Add a *Node* to the top of the stack
 
-**pop** Remove node from top of list and return its value
+**pop** Remove a *Node* from top of list and return its value

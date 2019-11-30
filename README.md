@@ -29,6 +29,8 @@ Write tests for Data Structures (Jest)
 
 **reverse:** Reverse the list in place
 
+[Blog Post](https://dotfury.com/blog/singly-linked-list/)
+
 ### Doubly Linked List
 #### Methods
 **push**

@@ -33,23 +33,8 @@ Write tests for Data Structures (Jest)
 
 ### Doubly Linked List
 #### Methods
-**push**
 
-**pop**
-
-**shift**
-
-**unshift**
-
-**get**
-
-**set**
-
-**insert**
-
-**remove**
-
-**reverse**
+Same as singly linked list
 
 ### Stack
 #### Methods

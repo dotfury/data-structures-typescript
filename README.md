@@ -29,16 +29,22 @@ Write tests for Data Structures (Jest)
 
 **reverse:** Reverse the list in place
 
+--
+
 ### Doubly Linked List
 #### Methods
 
 Same as singly linked list
+
+--
 
 ### Stack
 #### Methods
 **push** Add a *Node* to the top of the stack
 
 **pop** Remove a *Node* from top of list and return its value
+
+--
 
 ### Queue
 #### Methods

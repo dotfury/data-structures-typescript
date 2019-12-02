@@ -9,7 +9,7 @@ Write tests for Data Structures (Jest)
 
 ## Structures implemented
 
-### Singly Linked List
+### Singly Linked List [Blog Post](https://dotfury.com/blog/singly-linked-list/)
 #### Methods
 **push:** Add a *Node* to the end of the list
 
@@ -28,8 +28,6 @@ Write tests for Data Structures (Jest)
 **remove:** Remove a *Node* from the list at a specific position
 
 **reverse:** Reverse the list in place
-
-[Blog Post](https://dotfury.com/blog/singly-linked-list/)
 
 ### Doubly Linked List
 #### Methods

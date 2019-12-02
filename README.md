@@ -13,20 +13,20 @@ Write tests for Data Structures (Jest)
 #### Methods
 **push**, **pop**, **shift**, **unshift**, **get**, **set**, **insert**, **remove**, **reverse**
 
-======
+---
 
 ### Doubly Linked List
 #### Methods
 
 Same as singly linked list
 
-======
+---
 
 ### Stack
 #### Methods
 **push**, **pop**
 
-======
+---
 
 ### Queue
 #### Methods

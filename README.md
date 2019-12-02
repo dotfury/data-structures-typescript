@@ -11,43 +11,23 @@ Write tests for Data Structures (Jest)
 
 ### Singly Linked List [Blog Post](https://dotfury.com/blog/singly-linked-list/)
 #### Methods
-**push:** Add a *Node* to the end of the list
+**push**, **pop**, **shift**, **unshift**, **get**, **set**, **insert**, **remove**, **reverse**
 
-**pop:** Remove *Node* from the end of the list
-
-**shift:** Remove *Node* from the beginning of the list
-
-**unshift:** Add a *Node* to the beginning of the list
-
-**get:** Retrieve a *Node* by its position in a list
-
-**set:** Change the value of a *Node* based on its position in a list
-
-**insert:** Add a *Node* to the list at a specific position
-
-**remove:** Remove a *Node* from the list at a specific position
-
-**reverse:** Reverse the list in place
-
---
+======
 
 ### Doubly Linked List
 #### Methods
 
 Same as singly linked list
 
---
+======
 
 ### Stack
 #### Methods
-**push** Add a *Node* to the top of the stack
+**push**, **pop**
 
-**pop** Remove a *Node* from top of list and return its value
-
---
+======
 
 ### Queue
 #### Methods
-**enqueue** Add a *Node* to the queue
-
-**dequeue** Remove a *Node* from the queue
+**enqueue**, **dequeue**

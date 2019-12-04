@@ -71,9 +71,9 @@ export default class BinarySearchTree {
       return true;
     } else {
       if (value > this.root!.value) {
-        found =  this.searchNode(DIRECTIONS.RIGHT, this.root, value);
+        found = this.searchNode(DIRECTIONS.RIGHT, this.root, value);
       } else if (value < this.root!.value) {
-        found =  this.searchNode(DIRECTIONS.LEFT, this.root, value);
+        found = this.searchNode(DIRECTIONS.LEFT, this.root, value);
       }
     }
 

@@ -36,4 +36,4 @@ enqueue, dequeue
 
 ### Binary Search Tree
 #### Methods
-insert
+insert, search

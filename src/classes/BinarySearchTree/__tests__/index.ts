@@ -51,4 +51,32 @@ describe('====BINARY SEARCH TREE====', () => {
     expect(bst.root!.left!.right).toBe(null);
     expect(bst.root!.left!.left).toBe(null);
   });
+
+  test('Can search for a node in a BST', () => {
+    const bst = new BinarySearchTree();
+
+    bst.insert(1);
+    bst.insert(8);
+    bst.insert(7);
+    bst.insert(12);
+    bst.insert(3);
+    bst.insert(11);
+
+    const foundA = bst.search(12);
+    const foundB = bst.search(1);
+    const foundC = bst.search(3);
+    const lost = bst.search(6);
+
+    expect(foundA).toBe(true);
+    expect(foundB).toBe(true);
+    expect(foundC).toBe(true);
+    expect(lost).toBe(false);
+  });
+
+  test('Return false for empty BST: search', () => {
+    const bst = new BinarySearchTree();
+    const lost = bst.search(6);
+
+    expect(lost).toBe(false);
+  });
 });

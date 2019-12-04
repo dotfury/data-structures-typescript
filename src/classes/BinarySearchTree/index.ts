@@ -12,6 +12,11 @@ class Node {
   }
 }
 
+const DIRECTIONS = {
+  RIGHT: 'right',
+  LEFT: 'left'
+};
+
 export default class BinarySearchTree {
   root: Node | null;
 
@@ -23,10 +28,22 @@ export default class BinarySearchTree {
     if (node[direction] === null) {
       node[direction] = newNode;
     } else if (newNode!.value > node[direction]!.value) {
-      this.checkNode('right', node[direction], newNode);
+      this.checkNode(DIRECTIONS.RIGHT, node[direction], newNode);
     } else if (newNode!.value < node[direction]!.value) {
-      this.checkNode('left', node[direction], newNode);
+      this.checkNode(DIRECTIONS.LEFT, node[direction], newNode);
     }
+  }
+
+  searchNode(direction: string, node: Node, value: ValueType): boolean {
+    if (node[direction] === null) {
+      return false;
+    } else if (value > node[direction]!.value) {
+      return this.searchNode(DIRECTIONS.RIGHT, node[direction], value);
+    } else if (value < node[direction]!.value) {
+      return this.searchNode(DIRECTIONS.LEFT, node[direction], value);
+    }
+
+    return true;
   }
 
   insert(value: ValueType): BinarySearchTree {
@@ -36,12 +53,30 @@ export default class BinarySearchTree {
       this.root = node;
     } else {
       if (value > this.root!.value) {
-        this.checkNode('right', this.root, node);
+        this.checkNode(DIRECTIONS.RIGHT, this.root, node);
       } else if (value < this.root!.value) {
-        this.checkNode('left', this.root, node);
+        this.checkNode(DIRECTIONS.LEFT, this.root, node);
       }
     }
 
     return this;
+  }
+
+  search(value: ValueType): boolean {
+    let found = false;
+
+    if (this.root === null) {
+      return false;
+    } else if (this.root!.value === value) {
+      return true;
+    } else {
+      if (value > this.root!.value) {
+        found =  this.searchNode(DIRECTIONS.RIGHT, this.root, value);
+      } else if (value < this.root!.value) {
+        found =  this.searchNode(DIRECTIONS.LEFT, this.root, value);
+      }
+    }
+
+    return found;
   }
 }

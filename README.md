@@ -11,7 +11,7 @@ Write tests for Data Structures (Jest)
 
 ### Singly Linked List ([Blog Post](https://dotfury.com/blog/singly-linked-list/))
 #### Methods
-**push**, **pop**, **shift**, **unshift**, **get**, **set**, **insert**, **remove**, **reverse**
+push, pop, shift, unshift, get, set, insert, remove, reverse
 
 ---
 
@@ -24,16 +24,16 @@ Same as singly linked list
 
 ### Stack
 #### Methods
-**push**, **pop**
+push, pop
 
 ---
 
 ### Queue
 #### Methods
-**enqueue**, **dequeue**
+enqueue, dequeue
 
 ---
 
 ### Binary Search Tree
 #### Methods
-**insert**
+insert

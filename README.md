@@ -15,7 +15,7 @@ push, pop, shift, unshift, get, set, insert, remove, reverse
 
 ---
 
-### Doubly Linked List
+### Doubly Linked List ([Blog Post](https://dotfury.com/blog/doubly-linked-list))
 #### Methods
 
 Same as singly linked list

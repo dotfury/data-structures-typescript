@@ -79,4 +79,28 @@ export default class BinarySearchTree {
 
     return found;
   }
+
+  breadthFirstSearch(): ValueType[] {
+    let queue = [];
+    let values = [];
+    let node = null;
+
+    queue.push(this.root);
+  
+    while(queue.length > 0) {
+      node = queue.shift();
+  
+      if (node!.left !== null) {
+        queue.push(node!.left);
+      }
+  
+      if (node!.right !== null) {
+        queue.push(node!.right);
+      }
+  
+      values.push(node!.value);
+    }
+
+    return values;
+  }
 }

@@ -79,4 +79,20 @@ describe('====BINARY SEARCH TREE====', () => {
 
     expect(lost).toBe(false);
   });
+
+  test('Can perform Breadth First Search on a simple BST', () => {
+    const list = new BinarySearchTree();
+
+    list.insert(10);
+    list.insert(6);
+    list.insert(15);
+    list.insert(3);
+    list.insert(8);
+    list.insert(20);
+
+    const values = list.breadthFirstSearch();
+
+    expect(values.length).toBe(6);
+    expect(values).toEqual([10, 6, 15, 3, 8, 20]);
+  });
 });

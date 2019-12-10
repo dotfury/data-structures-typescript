@@ -82,7 +82,7 @@ export default class BinarySearchTree {
 
   breadthFirstSearch(): ValueType[] {
     let queue = [];
-    let values = [];
+    let values: ValueType[] = [];
     let node = null;
 
     queue.push(this.root);
@@ -100,6 +100,66 @@ export default class BinarySearchTree {
   
       values.push(node!.value);
     }
+
+    return values;
+  }
+
+  preOrder(): ValueType[] {
+    let values: ValueType[] = [];
+
+    function helper(node: Node) {
+      values.push(node!.value);
+
+      if (node!.left) {
+        helper(node!.left);
+      }
+
+      if (node!.right) {
+        helper(node!.right);
+      }
+    }
+
+    helper(this.root!);
+
+    return values;
+  }
+
+  postOrder(): ValueType[] {
+    let values: ValueType[] = [];
+
+    function helper(node: Node) {
+      if (node!.left) {
+        helper(node!.left);
+      }
+
+      if (node!.right) {
+        helper(node!.right);
+      }
+
+      values.push(node!.value);
+    }
+
+    helper(this.root!);
+
+    return values;
+  }
+
+  inOrder(): ValueType[] {
+    let values: ValueType[] = [];
+
+    function helper(node: Node) {
+      if (node!.left) {
+        helper(node!.left);
+      }
+
+      values.push(node!.value);
+
+      if (node!.right) {
+        helper(node!.right);
+      }
+    }
+
+    helper(this.root!);
 
     return values;
   }

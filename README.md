@@ -35,4 +35,4 @@ enqueue, dequeue
 
 ### Binary Search Tree
 #### Methods
-insert, search, breadth first search
+insert, search, breadth first search, depth first search: preOrder, postOrder, inOrder

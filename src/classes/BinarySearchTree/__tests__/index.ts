@@ -95,4 +95,52 @@ describe('====BINARY SEARCH TREE====', () => {
     expect(values.length).toBe(6);
     expect(values).toEqual([10, 6, 15, 3, 8, 20]);
   });
+
+  test('Can perform Depth First Search on a simple BST: PreOrder', () => {
+    const list = new BinarySearchTree();
+
+    list.insert(10);
+    list.insert(6);
+    list.insert(15);
+    list.insert(3);
+    list.insert(8);
+    list.insert(20);
+
+    const values = list.preOrder();
+
+    expect(values.length).toBe(6);
+    expect(values).toEqual([10, 6, 3, 8, 15, 20]);
+  });
+
+  test('Can perform Depth First Search on a simple BST: PostOrder', () => {
+    const list = new BinarySearchTree();
+
+    list.insert(10);
+    list.insert(6);
+    list.insert(15);
+    list.insert(3);
+    list.insert(8);
+    list.insert(20);
+
+    const values = list.postOrder();
+
+    expect(values.length).toBe(6);
+    expect(values).toEqual([3, 8, 6, 20, 15, 10]);
+  });
+
+  test('Can perform Depth First Search on a simple BST: InOrder', () => {
+    const list = new BinarySearchTree();
+
+    list.insert(10);
+    list.insert(6);
+    list.insert(15);
+    list.insert(3);
+    list.insert(8);
+    list.insert(20);
+
+    const values = list.inOrder();
+
+    expect(values.length).toBe(6);
+    expect(values).toEqual([3, 6, 8, 10, 15, 20]);
+  });
 });

@@ -40,4 +40,15 @@ describe('====MAX BINARY HEAP====', () => {
     expect(heap.values.length).toBe(3);
     expect(heap.values[0]).toBe(7);
   });
+
+  test('Can insert to larger value', () => {
+    const heap = new MaxBinaryHeap();
+
+    heap.values = [41, 39, 33, 18, 27, 12];
+
+    heap.insert(55);
+
+    expect(heap.values.length).toBe(7);
+    expect(heap.values).toEqual([55, 39, 41, 18, 27, 12, 33]);
+  });
 });

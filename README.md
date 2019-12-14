@@ -21,13 +21,13 @@ Same as singly linked list
 
 ---
 
-### Stack
+### Stack ([Blog Post](https://dotfury.com/blog/stack-queue))
 #### Methods
 push, pop
 
 ---
 
-### Queue
+### Queue ([Blog Post](https://dotfury.com/blog/stack-queue))
 #### Methods
 enqueue, dequeue
 

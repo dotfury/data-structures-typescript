@@ -41,4 +41,4 @@ insert, search, breadth first search, depth first search: preOrder, postOrder, i
 
 ### Binary Heap (max)
 #### Methods
-insert
+insert, extract max

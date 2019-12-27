@@ -48,3 +48,9 @@ insert, extract max
 ### Priority Queue (Min Binary Heap)
 #### Methods
 enqueue, dequeue
+
+---
+
+### Hash Table
+#### Methods
+hash, set, get, keys, values

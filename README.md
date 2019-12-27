@@ -39,6 +39,12 @@ insert, search, breadth first search, depth first search: preOrder, postOrder, i
 
 ---
 
-### Binary Heap (max)
+### Max Binary Heap
 #### Methods
 insert, extract max
+
+---
+
+### Priority Queue (Min Binary Heap)
+#### Methods
+enqueue, dequeue

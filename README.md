@@ -54,3 +54,9 @@ enqueue, dequeue
 ### Hash Table
 #### Methods
 hash, set, get, keys, values
+
+---
+
+### Graph
+#### Methods
+addVertex, addEdge, removeEdge, removeVertex
